@@ -1,0 +1,20 @@
+//Миксин для кнопки-ссылки с вариацией цвета
+@mixin style-link($color)
+  display: inline-block
+  text-transform: uppercase
+  text-decoration: none
+  color: $color
+
+//Миксин для подключения шрифтов
+@mixin font($font, $size, $url)
+  @font-face 
+    font-family: $font
+    src: $url
+    font-display: swap
+    font-weight: $size
+    font-style: normal
+
+
+
+
+

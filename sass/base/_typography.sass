@@ -1,0 +1,67 @@
+body
+  font-family: $font-family  
+  font-weight: 400
+  color: $color-grey
+  font-size: $font-size-paragraph
+  letter-spacing: 0.2rem
+  
+//стили заголовка h1 в блоке header
+.title-first
+  color: $color-white
+  text-transform: uppercase
+  &__main
+    display: block       
+    font-weight: 800
+    font-size: 5rem
+    letter-spacing: 0.2em
+    margin-bottom: 1.5rem
+    animation-name: leftToRight
+    animation-duration: 2s
+    animation-delay: .2s 
+    animation-timing-function: ease
+    animation-fill-mode: backwards
+    backface-visibility: hidden   
+  &__secondary
+    display: block      
+    font-weight: 100
+    font-size: 4rem
+    letter-spacing: 0.12em    
+    text-transform: lowercase
+    animation-name: rightToLeft
+    animation-duration: 2s
+    animation-delay: .2s 
+    animation-timing-function: ease
+    backface-visibility: hidden
+    animation-fill-mode: backwards
+    margin-bottom: 6.5rem
+.title-second
+  display: inline-block  
+  font-weight: 800
+  font-size: $font-size-paragraph-h2
+  letter-spacing: 1rem
+  text-transform: uppercase  
+  background: linear-gradient(90deg, $color-light-brown 3.65%, $color-dark-brown 100%)
+  background-clip: text
+  -webkit-background-clip: text
+  color: transparent
+  -webkit-text-fill-color: transparent
+  transition: all .5s ease
+  backface-visibility: hidden
+  &:hover
+    transform: skewY(4deg) skewX(15deg) scale(1.05)
+    text-shadow: $text-shadow-h2
+.title-third
+  font-weight: 700
+  font-size: $font-size-paragraph-h3
+  letter-spacing: 0.2rem
+  
+.paragraph  
+  font-weight: 400
+  font-size: $font-size-paragraph
+  line-height: 140%
+  letter-spacing: 0.2rem
+  
+
+    
+    
+

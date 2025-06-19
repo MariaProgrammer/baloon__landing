@@ -1,0 +1,23 @@
+@include font("Roboto", 400, url("../fonts/Roboto-Regular.woff") format("woff")) 
+@include font("Roboto", 700, url("../fonts/Roboto-Bold.woff") format("woff")) 
+
+*, ::after, ::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+//адаптивный размер шрифта для всего сайта, все единицы указываем в rem, а сам шрифт меняем на адаптиве по формуле: нужный размер шрифта (сейчас 10px)/16*100
+html
+  font-size: 62.5%
+
+body
+  background-color: $color-white
+  padding: 5rem
+
+//контейнер в который помещается сайт (без отступов от края в 50px)
+.container
+  width: 100%
+  height: 100%
+  background-color: $color-light
+
+
+

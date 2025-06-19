@@ -1,0 +1,23 @@
+.btn-text
+  &:link, &:visited
+    display: inline-block
+    color: $color-dark-brown      
+    font-weight: 700
+    font-size: $font-size-paragraph
+    letter-spacing: 0.2rem
+    text-transform: none
+    text-decoration: none  
+    background: transparent
+    padding: 1.4rem    
+    border-bottom: 1px $color-dark-brown solid
+    transition: all .3s ease
+  &:hover
+    background: $color-dark-brown
+    color: $color-white
+    box-shadow: $box-shadow
+    transform: translateY(-.4rem)
+    
+  &:active
+    transform: translateY(0rem)
+     transform: translateY(-2px)
+     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1)

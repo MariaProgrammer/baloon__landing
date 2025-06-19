@@ -1,0 +1,37 @@
+.row
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  max-width: $row-container
+  height: 100%  
+  margin: 0 auto
+  
+  &:not(:last-child)
+    margin-bottom: $margin-bottom-large
+    
+
+.col-1-of-2
+  width: calc((100% - #{$row-gutter})/2)  
+  
+.col-1-of-3
+  width: calc((100% - #{$row-gutter})/3)
+
+.col-2-of-3
+  width: calc(2*((100% - #{$row-gutter})/3) + #{$row-gutter})
+  
+.col-1-of-4
+  width: calc((100% - 3*#{$row-gutter})/4)
+
+.col-2-of-4
+  width: calc(2*((100% - #{$row-gutter})/4) )
+  
+
+.col-3-of-4
+ width: calc(#{$row-gutter} + ((100% - 3*#{$row-gutter})/4 + 2*((100% - #{$row-gutter})/4)))
+
+[class^="col-"]  
+  margin-right: $row-gutter
+  height: 100%
+  &:last-child
+    margin-right: 0  
+
