@@ -50,6 +50,14 @@ body
   &:hover
     transform: skewY(4deg) skewX(15deg) scale(1.05)
     text-shadow: $text-shadow-h2
+  &_white    
+    background: $color-white
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: $color-white
+    position: relative
+    backface-visibility: hidden
+    z-index: 10 
 .title-third
   font-weight: 700
   font-size: $font-size-paragraph-h3
