@@ -1,13 +1,15 @@
 //стили кнопки 
 .btn  
-  &:link, &:visited
+  &, &:link, &:visited
     @include style-link($color-grey)    
     background: $color-white
     padding: 1.5rem 4rem
     border-radius: 5rem
     position: relative
     font-size: 2rem
-    font-weight: 500    
+    font-weight: 500
+    border: none
+    cursor: pointer    
     transition: all .3s ease
   &:hover
     transform: translateY(-4px)
@@ -33,3 +35,10 @@
   &_animated
     animation: bottomToTop .5s ease-in-out 1.5s
     animation-fill-mode: backwards
+.btn_brown
+  &, &:link, &:visited
+    background: $color-light-brown
+    color: $color-white
+  &::after
+    content: ""
+    background: $color-light-brown

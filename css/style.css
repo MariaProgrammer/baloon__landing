@@ -362,6 +362,13 @@ template {
 
 @font-face {
   font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff") format("woff");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff") format("woff");
   font-display: swap;
   font-weight: 400;
@@ -458,7 +465,7 @@ body {
 }
 .title-first__secondary {
   display: block;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 4rem;
   letter-spacing: 0.12em;
   text-transform: lowercase;
@@ -536,7 +543,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -547,6 +554,8 @@ body {
   position: relative;
   font-size: 2rem;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 .btn:hover {
@@ -577,6 +586,15 @@ body {
 .btn_animated {
   animation: bottomToTop 0.5s ease-in-out 1.5s;
   animation-fill-mode: backwards;
+}
+
+.btn_brown, .btn_brown:link, .btn_brown:visited {
+  background: #BA8554;
+  color: #fff;
+}
+.btn_brown::after {
+  content: "";
+  background: #BA8554;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -876,6 +894,90 @@ body {
   padding-top: 5rem;
   padding-left: 5rem;
 }
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__group:nth-child(5) {
+  margin-top: 3.5rem;
+}
+.form__input {
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: #000;
+  padding: 1.8rem 1.8rem 1.8rem 2.2rem;
+  background: #fff;
+  border: none;
+  border-bottom: 0.2rem solid transparent;
+  border-radius: 0.3rem;
+  width: 75%;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 0.4rem solid #66D763;
+  box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.3);
+}
+.form__input:focus:invalid {
+  border-bottom: 0.4rem solid #D76363;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+.form__input:placeholder-shown:focus + .form__label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0rem);
+}
+.form__label {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  display: block;
+  transition: all 0.3s ease;
+}
+.form__group-radio {
+  width: 40%;
+  display: inline-block;
+}
+.form__input-radio {
+  display: none;
+}
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+}
+.form__button-radio {
+  display: block;
+  height: 3.3rem;
+  width: 3.3rem;
+  border-radius: 50%;
+  border: 0.5rem solid #A14F03;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #A14F03;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
+}
 
 .row {
   display: flex;
@@ -944,6 +1046,155 @@ body {
   left: 50%;
   top: 40%;
   transform: translate(-50%, -50%);
+}
+
+.footer {
+  padding: 8rem 0;
+  background: #333;
+}
+.footer__box {
+  text-align: center;
+}
+.footer__logo {
+  margin-bottom: 5rem;
+  width: 12rem;
+}
+.footer__menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__item:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.footer__link:hover {
+  color: #BA8554;
+  text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  transform: rotate(4deg) scale(1.2);
+}
+
+.navigation__button {
+  background: #fff;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 10rem;
+  right: 10rem;
+  z-index: 200;
+  text-align: center;
+  cursor: pointer;
+}
+.navigation__bg {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: radial-gradient(#BA8554, #A14F03);
+  position: fixed;
+  right: 10.5rem;
+  top: 10.5rem;
+  z-index: 100;
+  transition: all 0.7s;
+}
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 150;
+  opacity: 0;
+  width: 0;
+  transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navigation__item {
+  width: 100%;
+  text-align: center;
+}
+.navigation__item:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.navigation__link:link, .navigation__link:visited {
+  font-weight: 300;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 230%;
+  padding: 1rem 2rem;
+  transition: all 1s ease;
+  display: inline-block;
+}
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #A14F03;
+  transform: translateX(1rem);
+}
+.navigation__toggle {
+  display: none;
+}
+.navigation__toggle:checked ~ .navigation__bg {
+  transform: scale(80);
+}
+.navigation__toggle:checked ~ .navigation__nav {
+  width: 100%;
+  opacity: 1;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 35px;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 30px;
+  height: 2px;
+  background: #000;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.navigation__icon::before {
+  top: -8px;
+}
+.navigation__icon::after {
+  top: 8px;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -10px;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 10px;
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon {
+  background: transparent;
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-45deg);
+  top: 0;
 }
 
 .about {
