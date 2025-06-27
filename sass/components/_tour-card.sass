@@ -4,7 +4,10 @@
   -moz-perspective: 150rem
   -webkit-perspective: 150rem
   position: relative
-    
+  @media only screen and (max-width: 900px), (hover:none)
+    box-shadow: $box-shadow
+    height: auto
+
   &__side
     height: 50.2rem
     transition: all 1s ease
@@ -17,17 +20,31 @@
     box-shadow: $box-shadow
     border-radius: .5rem
     overflow: hidden
+    @media only screen and (max-width: 900px), (hover:none) 
+      height: auto
+      position: relative
+      box-shadow: none
     &_front      
       z-index: 10
+      @include respond(tab-port)    
+        height: auto
+        position: relative
     &_back
       background: linear-gradient(135deg, $color-light-brown 3.65%, $color-dark-brown 100%)
       transform: rotateY(-180deg)
       display: flex
       align-items: center
       justify-content: center
+      @media only screen and (max-width: 900px), (hover:none)    
+        height: auto
+        position: relative
+        transform: rotateY(0deg)
+        clip-path: polygon(0 0%, 100% 20%, 100% 100%, 0 100%)
   &:hover &__side_front
     transform: rotateY(180deg)
     z-index: 1
+    @media only screen and (max-width: 900px), (hover:none)
+      transform: rotateY(0deg)
   &:hover &__side_back
     transform: rotateY(0deg)
     z-index: 10
@@ -35,6 +52,9 @@
     height: 24.5rem
     background-blend-mode: hard-light     
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    @media only screen and (max-width: 900px), (hover:none)
+      height: 30rem
+
     
     &-1
       background: $color-light-brown url('../img/img-1.jpg')
@@ -64,6 +84,10 @@
     position: absolute
     top: 19rem
     right: 0
+    @include respond(tab-port)
+      top: 25rem
+      font-size: 3.8rem
+    
     
   &__span
     background: linear-gradient(90deg, $color-light-brown, $color-dark-brown)
@@ -73,12 +97,20 @@
       position: absolute
       top: 3.5rem
       right: 0
-      padding-bottom: 1rem  
+      padding-bottom: 1rem
+      @include respond(tab-port)
+        top: 4.2rem
   &__descr
+    @include respond(tab-port)
+      text-align: center
     ul
       list-style: none
       text-align: center
       padding-top: 4.5rem
+      @include respond(tab-port)
+        padding: 6rem 2.5rem 0 2.5rem
+        display: inline-flex
+        flex-direction: column
       li
         display: inline-block
         font-weight: 700
@@ -86,7 +118,8 @@
         letter-spacing: .2rem
         border-bottom: 1px solid $color-grey
         text-decoration-skip-ink: none
-        
+        @include respond(tab-port)
+          font-size: 2rem
         &:not(:last-child)
           margin-bottom: 2rem
   &__backside-box
@@ -95,6 +128,10 @@
     justify-content: space-between
     flex-direction: column
     min-height: 32rem
+    @media only screen and (max-width: 900px), (hover:none)
+      min-height: auto
+      gap: 3rem
+      padding: 15rem 0 10rem
   &__text
     font-weight: 300
     font-size: 1.6rem

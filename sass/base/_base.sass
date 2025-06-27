@@ -9,6 +9,14 @@
 //адаптивный размер шрифта для всего сайта, все единицы указываем в rem, а сам шрифт меняем на адаптиве по формуле: нужный размер шрифта (сейчас 10px)/16*100
 html
   font-size: 62.5%
+  @include respond(tab-port)
+    font-size: 56.25%
+  @include respond(tab-land)
+    font-size: 50%
+  @include respond(phone)
+    font-size: 30%
+  @include respond(big-screen)
+    font-size: 75%
 
 body
   background-color: $color-white

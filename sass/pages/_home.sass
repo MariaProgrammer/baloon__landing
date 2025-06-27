@@ -1,6 +1,8 @@
 //стили главной страницы сайта
 .about
   padding-top: 8rem
+  @include respond(tab-land)
+    padding-top: 6rem
 
 .adventure
   padding: 21.5rem 0
@@ -9,8 +11,16 @@
   background-size: cover
   background-repeat: no-repeat 
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%)
+  @include respond(tab-land)
+    margin-bottom: 6rem
+    padding: 15rem 1.5rem
+  @include respond(tab-port)
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%)
+
 .tour
-  padding-bottom: 8rem  
+  padding-bottom: 8rem
+  @include respond(tab-land)
+    padding-bottom: 6rem  
 .feedback
   padding: 8rem 0
   position: relative
@@ -20,6 +30,8 @@
   background-position: center
   background-size: cover
   background-repeat: no-repeat
+  @include respond(tab-port)
+    padding: 5rem
 
 
 

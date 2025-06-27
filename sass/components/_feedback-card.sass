@@ -6,8 +6,20 @@
   padding: 5.5rem 15rem 
   transform: skew(330deg)
   position: relative
+  @include respond(tab-port)
+    transform: skew(350deg)
+    padding: 5rem
+  @include respond(phone)
+    width: 78%
+    transform: skew(355deg)
+
+    
   & > *
-    transform: skew(-330deg)  
+    transform: skew(-330deg)
+    @include respond(tab-port)
+      transform: skew(-350deg)
+    @include respond(phone)   
+      transform: skew(-355deg)  
   &__img
     float: left    
     width: 16.7rem
@@ -17,12 +29,22 @@
     shape-outside: circle(50% at 50% 50%)
     -webkit-shape-outside: circle(50% at 50% 50%)
     overflow: hidden
+    @include respond(tab-port)
+      float: none
+      margin: 0 auto
+      margin-bottom: 2rem
     img
       width: 100%
       transform: scale(1.2)
       transition: all .6s ease
+      
   &__box
     width: 100%
+    h3
+      @include respond(tab-port)
+        text-align: center
+        line-height: 1.4
+
   &__name
     position: absolute
     left: 50%

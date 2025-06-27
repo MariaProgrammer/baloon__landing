@@ -6,6 +6,12 @@
   background-repeat: no-repeat
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
   position: relative
+  @media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px)
+    background: linear-gradient(90deg, rgba($color-light-brown,.7) 0%, rgba($color-black, .7) 100%), url('../img/baloons__bg_big.jpg')
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+  
   &__logo
     width: 5.6rem
     height: 7rem
@@ -19,3 +25,5 @@
     left: 50%
     top: 40%
     transform: translate(-50%, -50%)
+    @include respond(tab-land)
+      top: 50%

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -360,6 +361,11 @@ template {
   display: none;
 }
 
+/* В аргументах миксина мы будем указывать несколько вариантов брейкпойнов, таких как
+ * -phone
+ * -tab-port
+ * -tab-land
+ * -big-screen */
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Light.woff") format("woff");
@@ -389,6 +395,26 @@ template {
 
 html {
   font-size: 62.5%;
+}
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 1260px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -454,7 +480,7 @@ body {
   display: block;
   font-weight: 800;
   font-size: 5rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 1rem;
   margin-bottom: 1.5rem;
   animation-name: leftToRight;
   animation-duration: 2s;
@@ -462,6 +488,18 @@ body {
   animation-timing-function: ease;
   animation-fill-mode: backwards;
   backface-visibility: hidden;
+}
+@media only screen and (max-width: 1260px) {
+  .title-first__main {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .title-first__main {
+    font-size: 3.6rem;
+    letter-spacing: 0.5rem;
+    letter-spacing-margin-bottom: 0;
+  }
 }
 .title-first__secondary {
   display: block;
@@ -477,6 +515,18 @@ body {
   animation-fill-mode: backwards;
   margin-bottom: 6.5rem;
 }
+@media only screen and (max-width: 1260px) {
+  .title-first__secondary {
+    font-size: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .title-first__secondary {
+    font-size: 3.2rem;
+    letter-spacing: 0.2rem;
+  }
+}
 
 .title-second {
   display: inline-block;
@@ -491,6 +541,22 @@ body {
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
   backface-visibility: hidden;
+}
+@media only screen and (max-width: 1260px) {
+  .title-second {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .title-second {
+    line-height: 1.4;
+    letter-spacing: 0.8rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-second {
+    letter-spacing: 0.2rem;
+  }
 }
 .title-second:hover {
   transform: skewY(4deg) skewX(15deg) scale(1.05);
@@ -511,12 +577,42 @@ body {
   font-size: 2rem;
   letter-spacing: 0.2rem;
 }
+@media only screen and (max-width: 1260px) {
+  .title-third {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .title-third {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .title-third {
+    font-size: 2.2rem;
+  }
+}
 
 .paragraph {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 140%;
   letter-spacing: 0.2rem;
+}
+@media only screen and (max-width: 1260px) {
+  .paragraph {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .paragraph {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .paragraph {
+    font-size: 2rem;
+  }
 }
 
 .text-align-center {
@@ -557,6 +653,17 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+@media only screen and (max-width: 1260px) {
+  .btn, .btn:link, .btn:visited {
+    font-size: 1.8rem;
+    padding: 1.3rem 3.5rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .btn, .btn:link, .btn:visited {
+    padding: 2rem 5rem;
+  }
 }
 .btn:hover {
   transform: translateY(-4px);
@@ -685,6 +792,12 @@ body {
   -webkit-perspective: 150rem;
   position: relative;
 }
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card {
+    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.3);
+    height: auto;
+  }
+}
 .tour-card__side {
   height: 50.2rem;
   transition: all 1s ease;
@@ -698,8 +811,21 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
 }
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card__side {
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+}
 .tour-card__side_front {
   z-index: 10;
+}
+@media only screen and (max-width: 900px) {
+  .tour-card__side_front {
+    height: auto;
+    position: relative;
+  }
 }
 .tour-card__side_back {
   background: linear-gradient(135deg, #BA8554 3.65%, #A14F03 100%);
@@ -708,9 +834,22 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card__side_back {
+    height: auto;
+    position: relative;
+    transform: rotateY(0deg);
+    clip-path: polygon(0 0%, 100% 20%, 100% 100%, 0 100%);
+  }
+}
 .tour-card:hover .tour-card__side_front {
   transform: rotateY(180deg);
   z-index: 1;
+}
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card:hover .tour-card__side_front {
+    transform: rotateY(0deg);
+  }
 }
 .tour-card:hover .tour-card__side_back {
   transform: rotateY(0deg);
@@ -720,6 +859,11 @@ body {
   height: 24.5rem;
   background-blend-mode: hard-light;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card__img {
+    height: 30rem;
+  }
 }
 .tour-card__img-1 {
   background: #BA8554 url("../img/img-1.jpg");
@@ -750,6 +894,12 @@ body {
   top: 19rem;
   right: 0;
 }
+@media only screen and (max-width: 900px) {
+  .tour-card__title {
+    top: 25rem;
+    font-size: 3.8rem;
+  }
+}
 .tour-card__span {
   background: linear-gradient(90deg, #BA8554, #A14F03);
   padding: 1rem 2rem 0.6rem 2rem;
@@ -760,10 +910,27 @@ body {
   right: 0;
   padding-bottom: 1rem;
 }
+@media only screen and (max-width: 900px) {
+  .tour-card__span-2 {
+    top: 4.2rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .tour-card__descr {
+    text-align: center;
+  }
+}
 .tour-card__descr ul {
   list-style: none;
   text-align: center;
   padding-top: 4.5rem;
+}
+@media only screen and (max-width: 900px) {
+  .tour-card__descr ul {
+    padding: 6rem 2.5rem 0 2.5rem;
+    display: inline-flex;
+    flex-direction: column;
+  }
 }
 .tour-card__descr ul li {
   display: inline-block;
@@ -772,6 +939,11 @@ body {
   letter-spacing: 0.2rem;
   border-bottom: 1px solid #777;
   text-decoration-skip-ink: none;
+}
+@media only screen and (max-width: 900px) {
+  .tour-card__descr ul li {
+    font-size: 2rem;
+  }
 }
 .tour-card__descr ul li:not(:last-child) {
   margin-bottom: 2rem;
@@ -782,6 +954,13 @@ body {
   justify-content: space-between;
   flex-direction: column;
   min-height: 32rem;
+}
+@media only screen and (max-width: 900px), (hover: none) {
+  .tour-card__backside-box {
+    min-height: auto;
+    gap: 3rem;
+    padding: 15rem 0 10rem;
+  }
 }
 .tour-card__text {
   font-weight: 300;
@@ -810,8 +989,30 @@ body {
   transform: skew(330deg);
   position: relative;
 }
+@media only screen and (max-width: 900px) {
+  .feedback-card {
+    transform: skew(350deg);
+    padding: 5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .feedback-card {
+    width: 78%;
+    transform: skew(355deg);
+  }
+}
 .feedback-card > * {
   transform: skew(-330deg);
+}
+@media only screen and (max-width: 900px) {
+  .feedback-card > * {
+    transform: skew(-350deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .feedback-card > * {
+    transform: skew(-355deg);
+  }
 }
 .feedback-card__img {
   float: left;
@@ -823,6 +1024,13 @@ body {
   -webkit-shape-outside: circle(50% at 50% 50%);
   overflow: hidden;
 }
+@media only screen and (max-width: 900px) {
+  .feedback-card__img {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
 .feedback-card__img img {
   width: 100%;
   transform: scale(1.2);
@@ -830,6 +1038,12 @@ body {
 }
 .feedback-card__box {
   width: 100%;
+}
+@media only screen and (max-width: 900px) {
+  .feedback-card__box h3 {
+    text-align: center;
+    line-height: 1.4;
+  }
 }
 .feedback-card__name {
   position: absolute;
@@ -888,17 +1102,36 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
 }
+@media only screen and (max-width: 900px) {
+  .form-box {
+    height: 100%;
+    background-image: linear-gradient(114deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 504%, rgba(186, 133, 84, 0.3) 504%, rgba(161, 79, 3, 0.3) 100%), url("../img/form__bg.jpg");
+  }
+}
 
 .form {
-  width: 60%;
+  width: 70%;
   padding-top: 5rem;
   padding-left: 5rem;
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
 }
 .form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
+@media only screen and (max-width: 1260px) {
+  .form__group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
 .form__group:nth-child(5) {
   margin-top: 3.5rem;
+}
+@media only screen and (max-width: 900px) {
+  .form__group:nth-child(5) {
+    text-align: center;
+  }
 }
 .form__input {
   font-weight: 400;
@@ -910,7 +1143,13 @@ body {
   border: none;
   border-bottom: 0.2rem solid transparent;
   border-radius: 0.3rem;
-  width: 75%;
+  width: 70%;
+}
+@media only screen and (max-width: 900px) {
+  .form__input {
+    width: 100%;
+    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.3);
+  }
 }
 .form__input:focus {
   outline: none;
@@ -940,8 +1179,17 @@ body {
   transition: all 0.3s ease;
 }
 .form__group-radio {
-  width: 40%;
   display: inline-block;
+  margin-right: 1.5rem;
+}
+@media only screen and (max-width: 1260px) {
+  .form__group-radio {
+    display: block;
+    margin-right: 0;
+  }
+  .form__group-radio:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 .form__input-radio {
   display: none;
@@ -987,6 +1235,18 @@ body {
   height: 100%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1260px) {
+  .row {
+    max-width: 100rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .row {
+    max-width: 60rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
 .row:not(:last-child) {
   margin-bottom: 8rem;
 }
@@ -998,6 +1258,11 @@ body {
 .col-1-of-3 {
   width: calc((100% - 6rem) / 3);
 }
+@media only screen and (max-width: 1260px) {
+  .col-1-of-3 {
+    width: calc((100% - 2rem) / 3);
+  }
+}
 
 .col-2-of-3 {
   width: calc(2 * (100% - 6rem) / 3 + 6rem);
@@ -1005,6 +1270,11 @@ body {
 
 .col-1-of-4 {
   width: calc((100% - 3 * 6rem) / 4);
+}
+@media only screen and (max-width: 1260px) {
+  .col-1-of-4 {
+    width: calc((100% - 3 * 2rem) / 4);
+  }
 }
 
 .col-2-of-4 {
@@ -1019,6 +1289,17 @@ body {
   margin-right: 6rem;
   height: 100%;
 }
+@media only screen and (max-width: 1260px) {
+  [class^=col-] {
+    margin-right: 2rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  [class^=col-] {
+    width: 100%;
+    margin-right: 0;
+  }
+}
 [class^=col-]:last-child {
   margin-right: 0;
 }
@@ -1031,6 +1312,14 @@ body {
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   position: relative;
+}
+@media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px) {
+  .header {
+    background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("../img/baloons__bg_big.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 .header__logo {
   width: 5.6rem;
@@ -1047,6 +1336,11 @@ body {
   top: 40%;
   transform: translate(-50%, -50%);
 }
+@media only screen and (max-width: 1260px) {
+  .header__wrap {
+    top: 50%;
+  }
+}
 
 .footer {
   padding: 8rem 0;
@@ -1059,13 +1353,22 @@ body {
   margin-bottom: 5rem;
   width: 12rem;
 }
+@media only screen and (max-width: 1260px) {
+  .footer__logo {
+    margin-bottom: 4rem;
+    width: 8rem;
+  }
+}
 .footer__menu-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 }
-.footer__item:not(:last-child) {
-  margin-right: 5rem;
+@media only screen and (max-width: 900px) {
+  .footer__menu-list {
+    flex-wrap: wrap;
+  }
 }
 .footer__link:link, .footer__link:visited {
   text-decoration: none;
@@ -1075,6 +1378,16 @@ body {
   letter-spacing: 0.2rem;
   display: inline-block;
   transition: all 0.2s ease;
+}
+@media only screen and (max-width: 900px) {
+  .footer__link:link, .footer__link:visited {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer__link:link, .footer__link:visited {
+    font-size: 2rem;
+  }
 }
 .footer__link:hover {
   color: #BA8554;
@@ -1093,6 +1406,11 @@ body {
   z-index: 200;
   text-align: center;
   cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .navigation__button {
+    box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.3);
+  }
 }
 .navigation__bg {
   width: 6rem;
@@ -1142,6 +1460,11 @@ body {
   transition: all 1s ease;
   display: inline-block;
 }
+@media only screen and (max-width: 900px) {
+  .navigation__link:link, .navigation__link:visited {
+    font-size: 3rem;
+  }
+}
 .navigation__link:hover, .navigation__link:active {
   background-position: 100%;
   color: #A14F03;
@@ -1159,11 +1482,11 @@ body {
 }
 .navigation__icon {
   position: relative;
-  margin-top: 35px;
+  margin-top: 3.5rem;
 }
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
-  width: 30px;
-  height: 2px;
+  width: 3rem;
+  height: 0.2rem;
   background: #000;
   display: inline-block;
 }
@@ -1174,16 +1497,16 @@ body {
   transition: all 0.3s ease;
 }
 .navigation__icon::before {
-  top: -8px;
+  top: -0.8rem;
 }
 .navigation__icon::after {
-  top: 8px;
+  top: 0.8rem;
 }
 .navigation__button:hover .navigation__icon::before {
-  top: -10px;
+  top: -1rem;
 }
 .navigation__button:hover .navigation__icon::after {
-  top: 10px;
+  top: 1rem;
 }
 .navigation__toggle:checked + .navigation__button .navigation__icon {
   background: transparent;
@@ -1200,6 +1523,11 @@ body {
 .about {
   padding-top: 8rem;
 }
+@media only screen and (max-width: 1260px) {
+  .about {
+    padding-top: 6rem;
+  }
+}
 
 .adventure {
   padding: 21.5rem 0;
@@ -1209,9 +1537,25 @@ body {
   background-repeat: no-repeat;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
 }
+@media only screen and (max-width: 1260px) {
+  .adventure {
+    margin-bottom: 6rem;
+    padding: 15rem 1.5rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .adventure {
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  }
+}
 
 .tour {
   padding-bottom: 8rem;
+}
+@media only screen and (max-width: 1260px) {
+  .tour {
+    padding-bottom: 6rem;
+  }
 }
 
 .feedback {
@@ -1225,4 +1569,9 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 900px) {
+  .book {
+    padding: 5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
