@@ -1143,7 +1143,7 @@ body {
   border: none;
   border-bottom: 0.2rem solid transparent;
   border-radius: 0.3rem;
-  width: 70%;
+  width: 50%;
 }
 @media only screen and (max-width: 900px) {
   .form__input {
